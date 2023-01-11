@@ -30,6 +30,12 @@ void readTemp() {
                               ((C_COEFF)*pow((float64)logrT, (float32)3)));
     float temperatureC = (float32_t)(((1.0 / stEqn) + ABSOLUTE_ZERO) + 0.05);
     myData.tempC = temperatureC;
+    if(myData.tempC > myData.setTemp + 1.0f){
+        myData.heaterState = false; //turn the heater off if above 20 degrees celsius
+    }
+    else if(myData.tempC < myData.setTemp - 1.0f){
+        myData.heaterState = true; //turn the heater off if below 16 degrees celsius
+    }
     ThisThread::sleep_for(500ms);
 
   }

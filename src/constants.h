@@ -11,7 +11,7 @@
 #ifndef ALTSENSOR
 #define lightOut P10_4
 #else
-#define lightOut P10_2
+#define lightOut P10_4
 #endif
 /* Reference resistor in series with the thermistor is of 10kohm */
 #define R_REFERENCE                         (float)(10000)
@@ -27,7 +27,11 @@
 #define ABSOLUTE_ZERO                    (float)(-273.15)
 struct things_t {
     float tempC;
+    float setTemp = 27.0f;
+    bool heaterState;
     float lightL;
+    float setLightLevel = 50.0f;
+    bool lightState;
     bool buttonState;
 };
 #endif
