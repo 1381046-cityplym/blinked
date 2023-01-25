@@ -10,6 +10,7 @@
 #include "lightlevel.h"
 #include "button.h"
 #include "display.h"
+#include "wifiTask.h"
 
 // Initialise the digital pin LED1 as an output
 DigitalOut led(LED1);
@@ -18,9 +19,11 @@ Thread readTempHandle;
 Thread lightLevelHandle;
 Thread buttonHandle;
 Thread displayHandle;
+Thread wifiHandle;
 
 int main()
 {
+    wifiHandle.start(callback(runWifi));
     readTempHandle.start(callback(readTemp));
     lightLevelHandle.start(callback(readLightLevel));
     buttonHandle.start(callback(readButtonState));
