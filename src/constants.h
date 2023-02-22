@@ -1,12 +1,12 @@
 #ifndef CONSTANTS
 #define CONSTANTS
 // Blinking rate in milliseconds
-#define BLINKING_RATE     2s
-#define thermPower P10_3
-#define thermGround P10_0
+#define BLINKING_RATE     2000
+#define thermPower
+#define thermGround
 #define thermOut P10_1
 #define GREENLED P0_5
-#define PUSH_BUTTON P0_4
+#define PUSH_BUTTON P10_3
 #define ALTSENSOR
 #ifndef ALTSENSOR
 #define lightOut P10_4

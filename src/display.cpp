@@ -9,7 +9,7 @@ void displayTask(){
     DigitalOut green(GREENLED);
     RIS;
     while(true){
-        ThisThread::sleep_for(500ms);
+        ThisThread::sleep_for(500);
         HOME;
         printf("The button is %s\n", myData.buttonState?"pressed    ":"not pressed");
         if (myData.buttonState ==true) green = true;

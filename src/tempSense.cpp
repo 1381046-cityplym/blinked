@@ -36,7 +36,7 @@ void readTemp() {
     else if(myData.tempC < myData.setTemp - 1.0f){
         myData.heaterState = true; //turn the heater off if below 16 degrees celsius
     }
-    ThisThread::sleep_for(500ms);
+    ThisThread::sleep_for(500);
 
   }
 

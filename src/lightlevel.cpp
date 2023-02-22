@@ -19,6 +19,6 @@ void readLightLevel() {
         else if(myData.lightL > myData.setLightLevel + 5.0f){
         myData.lightState = false; //turn the heater off if below 16 degrees celsius
     }
-        ThisThread::sleep_for(500ms);
+        ThisThread::sleep_for(500);
     }
 }
